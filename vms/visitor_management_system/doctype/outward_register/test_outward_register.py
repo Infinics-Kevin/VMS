@@ -3,8 +3,8 @@
 # See license.txt
 from __future__ import unicode_literals
 
-import frappe
+# import frappe
 import unittest
 
-class TestVisitorEntry(unittest.TestCase):
+class TestOutwardRegister(unittest.TestCase):
 	pass

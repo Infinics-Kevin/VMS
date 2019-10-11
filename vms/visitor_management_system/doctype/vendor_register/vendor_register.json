@@ -1,17 +1,16 @@
 {
- "autoname": "VI-.####",
- "creation": "2019-08-12 12:18:56.248674",
+ "autoname": "VE-.####",
+ "creation": "2019-06-23 20:48:09.051845",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
   "date",
-  "visitor_name",
-  "address",
+  "vendor_name",
   "column_break_2",
   "card_no",
-  "mobile",
+  "company_name",
   "section_break_10",
   "to_meet",
   "column_break_17",
@@ -20,7 +19,7 @@
   "confirmation",
   "section_break_19",
   "purpose",
-  "column_break_22",
+  "column_break_14",
   "details",
   "section_break_18",
   "status",
@@ -38,19 +37,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "visitor_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Visitor Name",
-   "reqd": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Small Text",
-   "label": "Address"
-  },
-  {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
   },
@@ -61,24 +47,15 @@
    "reqd": 1
   },
   {
-   "fieldname": "mobile",
-   "fieldtype": "Data",
-   "label": "Mobile Number",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "section_break_10",
    "fieldtype": "Section Break"
   },
   {
    "fieldname": "to_meet",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "To Meet",
    "options": "Employee",
-   "reqd": 1,
-   "search_index": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_17",
@@ -97,7 +74,7 @@
    "fieldname": "confirmation",
    "fieldtype": "Select",
    "label": "Companion Confirmation",
-   "options": "\nYES\nNo"
+   "options": "\nYes\nNo"
   },
   {
    "fieldname": "section_break_19",
@@ -107,12 +84,8 @@
    "fieldname": "purpose",
    "fieldtype": "Select",
    "label": "Purpose",
-   "options": "\nEnquiry\nInterview\nOfficial Meet\nExit Employee\nVisitor",
+   "options": "\nEnquiry",
    "reqd": 1
-  },
-  {
-   "fieldname": "column_break_22",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "section_break_18",
@@ -123,7 +96,8 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Entry\nExit"
+   "options": "Entry\nExit",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_4",
@@ -145,24 +119,44 @@
    "label": "Out Time"
   },
   {
-   "default": "VI-",
+   "default": "VE-",
    "fieldname": "naming_series",
    "fieldtype": "Data",
-   "label": "Naming Series",
+   "label": "Series",
    "read_only": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "details",
    "fieldtype": "Small Text",
    "label": "Details",
    "reqd": 1
+  },
+  {
+   "fetch_from": "vendor.company_name",
+   "fetch_if_empty": 1,
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor_name",
+   "fieldtype": "Link",
+   "label": "Vendor Name",
+   "options": "Vendor",
+   "reqd": 1
   }
  ],
- "modified": "2019-09-13 12:11:13.268163",
+ "modified": "2019-09-13 12:11:33.985029",
  "modified_by": "Administrator",
  "module": "Visitor Management System",
- "name": "Visitor Register",
+ "name": "Vendor Register",
  "owner": "Administrator",
  "permissions": [
   {
@@ -174,18 +168,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "VMS Admin",
    "share": 1,
    "write": 1
   }

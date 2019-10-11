@@ -2,7 +2,7 @@
 // rename this file from _test_[name] to test_[name] to activate
 // and remove above this line
 
-QUnit.test("test: Visitor Entry", function (assert) {
+QUnit.test("test: Vendor Register", function (assert) {
 	let done = assert.async();
 
 	// number of asserts
@@ -10,7 +10,7 @@ QUnit.test("test: Visitor Entry", function (assert) {
 
 	frappe.run_serially([
 		// insert a new Visitor Entry
-		() => frappe.tests.make('Visitor Entry', [
+		() => frappe.tests.make('Vendor Register', [
 			// values to be set
 			{key: 'value'}
 		]),
